@@ -144,7 +144,7 @@ main {
 
   .container {
     @include alignSection();
-    gap: 20px;
+    gap: $card-gap;
     flex-wrap: wrap;
   }
   .card {
@@ -181,7 +181,7 @@ main {
       }
 
       .badge.red {
-        background-color: red;
+        background-color: $current-price-color;
       }
 
       .badge.green {
@@ -190,10 +190,10 @@ main {
     }
 
     .card-vendor {
-      font-size: 0.9rem;
+      font-size: $card-vendor-size;
     }
     .card-name {
-      font-size: 1.2rem;
+      font-size: $card-name-size;
     }
 
     .card-name,
@@ -204,7 +204,7 @@ main {
       font-size: 0.95rem;
     }
     .price.current {
-      color: red;
+      color: $current-price-color;
     }
     .price.original {
       text-decoration: line-through;

@@ -24,6 +24,20 @@ export default {
           href: "#",
         },
       ],
+      infos: [
+        {
+          text: "Informazione legali",
+          href: "#",
+        },
+        {
+          text: "Informativa sulla privacy",
+          href: "#",
+        },
+        {
+          text: "Diretto di recesso",
+          href: "#",
+        },
+      ],
     };
   },
 };
@@ -35,9 +49,7 @@ export default {
       <div class="footer-info">
         <h4>Boolando S.r.l</h4>
         <p>
-          <a href="#">Informazione legali</a>
-          <a href="#">Informativa sulla privacy</a>
-          <a href="#">Diretto di recesso</a>
+          <a v-for="info in infos" :href="info.href">{{ info.text }}</a>
         </p>
       </div>
       <div class="footer-icon">
@@ -55,21 +67,17 @@ export default {
 @use "../assets/styles/partials/mixins" as *;
 
 footer {
-  display: flex;
-  justify-content: center;
-  align-content: center;
+  @include centerSection();
   background-color: $footer-bg;
 
   .container {
+    @include alignSection();
     padding: $section-padding;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     color: white;
   }
 
   a {
-    margin-right: 5px;
+    margin-right: $footer-icon-distance;
   }
 
   .footer-icon {
