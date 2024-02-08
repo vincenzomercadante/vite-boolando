@@ -113,8 +113,14 @@ export default {
             <img :src="generateURL(product.frontImage)" alt="front-image" />
             <img :src="generateURL(product.hoverImage)" alt="back-image" />
           </figure>
-          <div v-for="ticket in badge" class="badge" :class="ticket.category">
-            {{ ticket.text }}
+          <div class="badge-container">
+            <div
+              v-for="ticket in product.badge"
+              class="badge"
+              :class="ticket.category"
+            >
+              {{ ticket.text }}
+            </div>
           </div>
         </div>
         <div class="card-info">
@@ -129,6 +135,7 @@ export default {
 </template>
 
 <style scoped lang="scss">
+@use "../assets/styles/partials/mixins" as *;
 main {
   padding: 50px 0;
   display: flex;
@@ -136,7 +143,7 @@ main {
   align-items: center;
 
   .container {
-    display: flex;
+    @include alignSection();
     gap: 20px;
     flex-wrap: wrap;
   }
@@ -145,15 +152,41 @@ main {
     display: flex;
     flex-direction: column;
 
-    img:last-child {
-      display: none;
-    }
+    .card-image {
+      position: relative;
 
-    &:hover img:last-child {
-      display: block;
-    }
-    &:hover img:first-child {
-      display: none;
+      img:last-child {
+        display: none;
+      }
+
+      &:hover img:last-child {
+        display: block;
+      }
+      &:hover img:first-child {
+        display: none;
+      }
+
+      .badge-container {
+        position: absolute;
+        left: 0;
+        bottom: 50px;
+        display: flex;
+        gap: 5px;
+      }
+
+      .badge {
+        padding: 1rem;
+        color: white;
+        font-weight: bold;
+      }
+
+      .badge.red {
+        background-color: red;
+      }
+
+      .badge.green {
+        background-color: green;
+      }
     }
 
     .card-vendor {

@@ -2,21 +2,21 @@
 export default {
   data() {
     return {
-      isClicked: false,
+      clicked: false,
     };
   },
 
   methods: {
     isClicked() {
-      this.isClicked = this.isClicked ? false : true;
+      this.clicked = this.clicked ? false : true;
     },
   },
 };
 </script>
 
 <template>
-  <div @click="isClicked()" :class="isClicked ? 'clicked' : ''">
-    <i class="fa-solid fa-heart"></i>
+  <div @click="isClicked()">
+    <i class="fa-solid fa-heart" :class="clicked ? 'clicked' : ''"></i>
   </div>
 </template>
 
@@ -35,9 +35,9 @@ div {
   i {
     color: black;
   }
-}
 
-.clicked i {
-  color: red;
+  .clicked {
+    color: red;
+  }
 }
 </style>

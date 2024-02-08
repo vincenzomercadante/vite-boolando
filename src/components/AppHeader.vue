@@ -74,6 +74,7 @@ export default {
 
 <style scoped lang="scss">
 @use "../assets/styles/partials/variables" as *;
+@use "../assets/styles/partials/mixins" as *;
 header {
   display: flex;
   justify-content: center;
@@ -81,16 +82,14 @@ header {
   box-shadow: 0px 3px 15px 1px rgba(0, 0, 0, 0.41);
 
   .container {
-    padding: $header-padding;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include alignSection();
+    padding: $section-padding;
     color: white;
-    font-size: 1rem;
     font-weight: bold;
   }
   figure {
     width: $logo-width;
+    align-self: center;
   }
 }
 </style>
