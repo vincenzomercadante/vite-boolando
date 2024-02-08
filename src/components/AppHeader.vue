@@ -48,7 +48,9 @@ export default {
 
 <template>
   <header>
+    <!-- container header links & logo -->
     <div class="container">
+      <!-- category links -->
       <ul>
         <li v-for="link in links">
           <a :href="link.href" :class="link.active ? 'active' : ''">{{
@@ -56,9 +58,11 @@ export default {
           }}</a>
         </li>
       </ul>
+      <!-- site logo -->
       <figure>
         <img :src="generateUrl(logo)" alt="boolando logo" />
       </figure>
+      <!-- header icon list -->
       <ul>
         <li v-for="icon in icons">
           <a :href="icon.href"><i :class="icon.img"></i></a>
@@ -86,7 +90,7 @@ header {
     font-weight: bold;
   }
   figure {
-    width: 200px;
+    width: $logo-width;
   }
 }
 </style>
