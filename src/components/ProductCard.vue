@@ -1,5 +1,5 @@
 <script>
-import CardHearth from "./CardHearth.vue";
+import CardHeart from "./CardHeart.vue";
 export default {
   props: {
     card: Object,
@@ -11,20 +11,26 @@ export default {
   },
 
   components: {
-    CardHearth,
+    CardHeart,
   },
 };
 </script>
 
 <template>
+  <!-- card container -->
   <div class="card">
+    <!-- product image section -->
     <div class="card-image">
-      <CardHearth></CardHearth>
+      <!-- div with heart icon -->
+      <CardHeart></CardHeart>
+      <!-- images that change with the hover event -->
       <figure>
         <img :src="generateURL(card.frontImage)" alt="front-image" />
         <img :src="generateURL(card.hoverImage)" alt="back-image" />
       </figure>
+      <!-- badge with additional info of the product -->
       <div class="badge-container">
+        <!-- badge generator -->
         <div
           v-for="ticket in card.badge"
           class="badge"
@@ -34,10 +40,15 @@ export default {
         </div>
       </div>
     </div>
+    <!-- product info section -->
     <div class="card-info">
+      <!-- product's vendor -->
       <div class="card-vendor">{{ card.vendor }}</div>
+      <!-- product's name -->
       <div class="card-name">{{ card.productName }}</div>
+      <!-- product's current price -->
       <span class="price current">{{ card.price }}</span>
+      <!-- product's original price if it does exist -->
       <span class="price original">{{ card.originalPrice }}</span>
     </div>
   </div>

@@ -1,62 +1,29 @@
 <script>
 export default {
-  data() {
-    return {
-      socials: [
-        {
-          icon: "fa-brands fa-twitter",
-          href: "#",
-        },
-        {
-          icon: "fa-brands fa-facebook-f",
-          href: "#",
-        },
-        {
-          icon: "fa-brands fa-instagram",
-          href: "#",
-        },
-        {
-          icon: "fa-brands fa-pinterest-p",
-          href: "#",
-        },
-        {
-          icon: "fa-brands fa-youtube",
-          href: "#",
-        },
-      ],
-      infos: [
-        {
-          text: "Informazione legali",
-          href: "#",
-        },
-        {
-          text: "Informativa sulla privacy",
-          href: "#",
-        },
-        {
-          text: "Diretto di recesso",
-          href: "#",
-        },
-      ],
-    };
+  props: {
+    footerLinks: Array,
+    footerIcons: Array,
   },
 };
 </script>
 
 <template>
   <footer>
+    <!-- container -->
     <div class="container">
+      <!-- footer left -->
       <div class="footer-info">
         <h4>Boolando S.r.l</h4>
         <p>
-          <a v-for="info in infos" :href="info.href">{{ info.text }}</a>
+          <a v-for="link in footerLinks" :href="link.href">{{ link.text }}</a>
         </p>
       </div>
+      <!-- footer right -->
       <div class="footer-icon">
         <p>Trovaci anche su</p>
-        <a v-for="social in socials" :href="social.href"
-          ><i :class="social.icon"></i
-        ></a>
+        <a v-for="icon in footerIcons" :href="icon.href"
+          ><font-awesome-icon :icon="icon.img" />
+        </a>
       </div>
     </div>
   </footer>

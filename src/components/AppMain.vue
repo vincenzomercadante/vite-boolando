@@ -13,7 +13,9 @@ export default {
 
 <template>
   <main>
+    <!-- container -->
     <div class="container">
+      <!-- card for every product of products array -->
       <ProductCard v-for="product in products" :card="product"></ProductCard>
     </div>
   </main>

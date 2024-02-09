@@ -3,6 +3,7 @@ export default {
   data() {
     return {
       clicked: false,
+      icon: "fa-solid fa-heart",
     };
   },
 
@@ -15,8 +16,10 @@ export default {
 </script>
 
 <template>
+  <!-- div that contains the heart icon -->
   <div @click="isClicked()">
-    <i class="fa-solid fa-heart" :class="clicked ? 'clicked' : ''"></i>
+    <!-- icon -->
+    <font-awesome-icon :icon="icon" :class="this.clicked ? 'clicked' : ''" />
   </div>
 </template>
 

@@ -91,6 +91,81 @@ export default {
           originalPrice: "184,99$",
         },
       ],
+
+      headerItems: {
+        headerLinkTexts: [
+          {
+            text: "Donna",
+            href: "#",
+            active: false,
+          },
+          {
+            text: "Uomo",
+            href: "#",
+            active: false,
+          },
+          {
+            text: "Bambino",
+            href: "#",
+            active: false,
+          },
+        ],
+
+        headerLinkIcons: [
+          {
+            img: "fa-regular fa-user",
+            href: "#",
+          },
+          {
+            img: "fa-regular fa-heart",
+            href: "#",
+          },
+          {
+            img: "fa-solid fa-bag-shopping",
+            href: "#",
+          },
+        ],
+        logo: "../assets/img/boolean-logo.png",
+      },
+
+      footerItems: {
+        footerLinkIcons: [
+          {
+            img: "fa-brands fa-twitter",
+            href: "#",
+          },
+          {
+            img: "fa-brands fa-facebook-f",
+            href: "#",
+          },
+          {
+            img: "fa-brands fa-instagram",
+            href: "#",
+          },
+          {
+            img: "fa-brands fa-pinterest-p",
+            href: "#",
+          },
+          {
+            img: "fa-brands fa-youtube",
+            href: "#",
+          },
+        ],
+        footerLinksText: [
+          {
+            text: "Informazione legali",
+            href: "#",
+          },
+          {
+            text: "Informativa sulla privacy",
+            href: "#",
+          },
+          {
+            text: "Diretto di recesso",
+            href: "#",
+          },
+        ],
+      },
     };
   },
 
@@ -103,9 +178,16 @@ export default {
 </script>
 
 <template>
-  <AppHeader></AppHeader>
+  <AppHeader
+    :headerLinks="headerItems.headerLinkTexts"
+    :headerIcons="headerItems.headerLinkIcons"
+    :logoPath="headerItems.logo"
+  ></AppHeader>
   <AppMain :products="products"></AppMain>
-  <AppFooter></AppFooter>
+  <AppFooter
+    :footerLinks="footerItems.footerLinksText"
+    :footerIcons="footerItems.footerLinkIcons"
+  ></AppFooter>
 </template>
 
 <style lang="scss">

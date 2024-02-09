@@ -1,41 +1,9 @@
 <script>
 export default {
-  data() {
-    return {
-      links: [
-        {
-          text: "Donna",
-          href: "#",
-          active: false,
-        },
-        {
-          text: "Uomo",
-          href: "#",
-          active: false,
-        },
-        {
-          text: "Bambino",
-          href: "#",
-          active: false,
-        },
-      ],
-      icons: [
-        {
-          img: "fa-regular fa-user",
-          href: "#",
-        },
-        {
-          img: "fa-regular fa-heart",
-          href: "#",
-        },
-        {
-          img: "fa-solid fa-bag-shopping",
-          href: "#",
-        },
-      ],
-
-      logo: "../assets/img/boolean-logo.png",
-    };
+  props: {
+    headerLinks: Array,
+    headerIcons: Array,
+    logoPath: String,
   },
 
   methods: {
@@ -52,7 +20,7 @@ export default {
     <div class="container">
       <!-- category links -->
       <ul>
-        <li v-for="link in links">
+        <li v-for="link in headerLinks">
           <a :href="link.href" :class="link.active ? 'active' : ''">{{
             link.text
           }}</a>
@@ -60,12 +28,12 @@ export default {
       </ul>
       <!-- site logo -->
       <figure>
-        <img :src="generateUrl(logo)" alt="boolando logo" />
+        <img :src="generateUrl(logoPath)" alt="boolando logo" />
       </figure>
       <!-- header icon list -->
       <ul>
-        <li v-for="icon in icons">
-          <a :href="icon.href"><i :class="icon.img"></i></a>
+        <li v-for="icon in headerIcons">
+          <a :href="icon.href"><font-awesome-icon :icon="icon.img" /></a>
         </li>
       </ul>
     </div>
