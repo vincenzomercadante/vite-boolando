@@ -21,7 +21,7 @@ export default {
 
 <template>
   <!-- card container with click-->
-  <div @click="$emit('card-clicked', this.index)" class="card">
+  <div class="card">
     <!-- product image section -->
     <div class="card-image">
       <!-- div with heart icon -->
@@ -48,7 +48,9 @@ export default {
       <!-- product's vendor -->
       <div class="card-vendor">{{ card.vendor }}</div>
       <!-- product's name -->
-      <div class="card-name">{{ card.productName }}</div>
+      <div class="card-name" @click="$emit('card-clicked', this.index)">
+        {{ card.productName }}
+      </div>
       <!-- product's current price -->
       <span class="price current">{{ card.price }}</span>
       <!-- product's original price if it does exist -->
@@ -108,6 +110,7 @@ export default {
   }
   .card-name {
     font-size: $card-name-size;
+    cursor: pointer;
   }
 
   .card-name,
