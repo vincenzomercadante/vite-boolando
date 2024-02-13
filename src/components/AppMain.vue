@@ -18,8 +18,9 @@ export default {
   },
 
   methods: {
-    handleCardClick() {
+    handleCardClick(productIndex) {
       store.modal.show = true;
+      store.modal.product = this.products[productIndex];
     },
   },
 };
@@ -31,8 +32,9 @@ export default {
     <div class="container">
       <!-- card for every product of products array -->
       <ProductCard
-        v-for="product in products"
+        v-for="(product, index) in products"
         :card="product"
+        :index="index"
         @card-clicked="handleCardClick"
       ></ProductCard>
     </div>

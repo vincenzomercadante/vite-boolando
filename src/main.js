@@ -20,6 +20,7 @@ import {
 import {
   faHeart as fasHeart,
   faBagShopping,
+  faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 
 /* import of regular icons */
@@ -38,7 +39,8 @@ library.add(
   faBagShopping,
   faUser,
   fasHeart,
-  farHeart
+  farHeart,
+  faXmark
 );
 
 // app creation

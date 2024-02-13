@@ -3,6 +3,7 @@ import CardHeart from "./CardHeart.vue";
 export default {
   props: {
     card: Object,
+    index: Number,
   },
   methods: {
     generateURL(path) {
@@ -20,7 +21,7 @@ export default {
 
 <template>
   <!-- card container with click-->
-  <div @click="$emit('card-clicked')" class="card">
+  <div @click="$emit('card-clicked', this.index)" class="card">
     <!-- product image section -->
     <div class="card-image">
       <!-- div with heart icon -->
