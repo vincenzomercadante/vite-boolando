@@ -13,12 +13,14 @@ export default {
   components: {
     CardHeart,
   },
+
+  emits: ["card-clicked"],
 };
 </script>
 
 <template>
-  <!-- card container -->
-  <div class="card">
+  <!-- card container with click-->
+  <div @click="$emit('card-clicked')" class="card">
     <!-- product image section -->
     <div class="card-image">
       <!-- div with heart icon -->

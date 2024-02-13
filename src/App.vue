@@ -9,6 +9,7 @@ import { store } from "./db/store";
 import AppHeader from "./components/AppHeader.vue";
 import AppMain from "./components/AppMain.vue";
 import AppFooter from "./components/AppFooter.vue";
+import AppModal from "./components/AppModal.vue";
 
 export default {
   data() {
@@ -24,6 +25,7 @@ export default {
     AppHeader,
     AppMain,
     AppFooter,
+    AppModal,
   },
 
   created() {
@@ -52,6 +54,8 @@ export default {
     :headerIcons="headerItems.headerLinkIcons"
     :logoPath="headerItems.logo"
   ></AppHeader>
+  <!-- modal -->
+  <AppModal v-if="store.modal.show" />
   <!-- main -->
   <AppMain :products="products"></AppMain>
   <!-- footer -->

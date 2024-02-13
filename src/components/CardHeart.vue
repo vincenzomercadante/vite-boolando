@@ -9,7 +9,7 @@ export default {
 
   methods: {
     isClicked() {
-      this.clicked = this.clicked ? false : true;
+      this.clicked = !this.clicked;
     },
   },
 };
